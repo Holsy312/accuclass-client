@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "accuclass-client"
+dynamic = ["version"]
+description = "Unofficial Python client and command-line tool for the AccuClass attendance API"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Oliver Holdsworth" }]
+keywords = ["accuclass", "engineerica", "attendance", "education", "api-client"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Education",
+    "Typing :: Typed",
+]
+dependencies = []
+
+Homepage = "https://github.com/Holsy312/accuclass-client"
+Issues = "https://github.com/Holsy312/accuclass-client/issues"
+Changelog = "https://github.com/Holsy312/accuclass-client/blob/main/CHANGELOG.md"
+
+[project.scripts]
+accuclass = "accuclass_client.cli:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "accuclass_client._version.__version__" }
+
+[tool.setuptools.package-data]
+accuclass_client = ["py.typed"]
